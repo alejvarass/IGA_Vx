@@ -1,0 +1,41 @@
+Fecha del informe:   Jueves, 29 de Septiembre de 2011 06:48:31 p.m.
+
+Agilent Cerity QA/QC Report
+Nombre de la muestra:   Desviado10                                   
+Descripción de la muestra:                                                        
+Hora de presentación:   Jueves, 29 de Septiembre de 2011 06:45:46 p.m.
+Operador:                                                            
+Fecha de inyección:                  Jueves, 29 de Septiembre de 2011 06:47:27 p.m.
+Descripción del GC:                  Micro GC - SN: US10712001                    
+Descripción de la señal:             TCD1 A; TCD2 A                               
+Método:                 Metodo 19-09-08                              
+Método guardado por última vez:      Miércoles, 28 de Septiembre de 2011 02:41:14 p.m.
+
+********************************************************************************
+                                 Informe de ESTD
+********************************************************************************
+
+Calibración guardada por última vez: Domingo, 18 de Septiembre de 2011 05:53:48 p.m.
+Multiplicador:                         1.0000                             
+Dilución:                              1.0000                             
+Cantidad de muestra:                   1.0000 ppm                         
+Tipo de muestra:                     Muestra                              
+Fuente de muestreo:                  Inyector                             
+
+
+
+Señal | Tiempo de | Tipo  | Área       | Cantidad/Área | Cantidad  | Nombre        | 
+      | retención |       | [µV*s]     |               | [ppm]     |               | 
+      | [min]     |       |            |               |           |               | 
+----- | --------- | ----- | ---------- | ------------- | --------- | ------------- | 
+  1   | 0.291     |       |   0.00000  | 2.63689e-308  |   0.00000 | Metano        | 
+  1   | 0.467     | BP    | 1290.22225 | 7.84314e-001  | 1011.93902| DioxidoCarbono| 
+  1   | 0.578     | VV    |  28.13322  | 7.69231e-001  |  21.64093 | Etano         | 
+  2   | 0.210     |       |   0.00000  | 2.63689e-308  |   0.00000 | Propano       | 
+  2   | 0.320     |       |   0.00000  | 2.63689e-308  |   0.00000 | IsoButano     | 
+  2   | 0.380     |       |   0.00000  | 2.63689e-308  |   0.00000 | NormalButano  | 
+  2   | 0.575     |       |   0.00000  | 2.63689e-308  |   0.00000 | IsoPentano    | 
+  2   | 0.678     |       |   0.00000  | 2.63689e-308  |   0.00000 | NormalPentano | 
+
+Cantidad total = 1033.57995
+

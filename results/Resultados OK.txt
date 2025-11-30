@@ -1,0 +1,41 @@
+Fecha del informe:   Lunes, 21 de Diciembre de 2009 16:51
+
+Agilent Cerity QA/QC Report
+Nombre de la muestra:   Dicky9                                       
+Descripción de la muestra:                                                        
+Hora de presentación:   Lunes, 21 de Diciembre de 2009 16:48         
+Operador:                                                            
+Fecha de inyección:                  Lunes, 21 de Diciembre de 2009 16:50         
+Descripción del GC:                  MicroGC He - SN: US10712001                  
+Descripción de la señal:             TCD1 A; TCD2 A                               
+Método:                 Metodo 19-09-08                              
+Método guardado por última vez:      Domingo, 20 de Diciembre de 2009 20:36       
+
+********************************************************************************
+                                 Informe de ESTD
+********************************************************************************
+
+Calibración guardada por última vez: Domingo, 20 de Diciembre de 2009 20:36
+Multiplicador:                         1.0000                             
+Dilución:                              1.0000                             
+Cantidad de muestra:                   1.0000 ppm                         
+Tipo de muestra:                     Muestra                              
+Fuente de muestreo:                  Inyector                             
+
+
+
+Señal | Tiempo de | Tipo  | Área       | Cantidad/Área | Cantidad  | Nombre        | 
+      | retención |       | [µV*s]     |               | [ppm]     |               | 
+      | [min]     |       |            |               |           |               | 
+----- | --------- | ----- | ---------- | ------------- | --------- | ------------- | 
+  1   | 0.293     | BP    | 1120.67698 | 9.69932e-001  | 1086.98058| Metano        | 
+  1   | 0.474     | BB    | 5917.20938 | 8.13008e-001  | 4810.73933| DioxidoCarbono| 
+  1   | 0.601     | PB    | 378.35412  | 6.84932e-001  | 259.14666 | Etano         | 
+  2   | 0.214     | BBA   | 233.42345  | 1.08696e+000  | 253.72114 | Propano       | 
+  2   | 0.323     | BP    | 496.42329  | 5.53857e-001  | 274.94754 | IsoButano     | 
+  2   | 0.378     | VP    | 403.02627  | 6.20563e-001  | 250.10318 | NormalButano  | 
+  2   | 0.570     | BP    | 597.38932  | 4.42306e-001  | 264.22867 | IsoPentano    | 
+  2   | 0.671     | BB    | 617.24788  | 4.34783e-001  | 268.36864 | NormalPentano | 
+
+Cantidad total = 7468.23575
+

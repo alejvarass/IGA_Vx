@@ -1,0 +1,140 @@
+Private Sub TasSerial1_OnSuccessfullyReceived()
+
+    Dim NedTemp                                 As Integer
+    Dim ModuloGrabacion                         As Integer
+    Dim StrSql                                  As String
+    Dim fecha                                   As Double
+    Dim Index                                   As Long
+    Dim IdPozo                                  As Long
+    Dim objPozoGasTiempo                        As clsPozoGasTiempo
+    
+    ModuloGrabacion = 5
+
+    StartRun = TasSerial1.PointValue(0)
+
+    BackFlushAnalizing = TasSerial1.PointValue(1)
+
+    EContinuoControlador = TasSerial1.PointValue(2)
+    ENormalControlador = TasSerial1.PointValue(3)
+    EFastControlador = TasSerial1.PointValue(4)
+
+    PosFast = TasSerial1.PointValue(5)
+    PosNormal = TasSerial1.PointValue(6)
+
+    TempFID = TasSerial1.PointValue(7)
+    TempOVEN = TasSerial1.PointValue(8)
+
+    SamplePressure = TasSerial1.PointValue(9)
+
+    Signal = TasSerial1.PointValue(10)
+
+    If Not gObjConfiguracion.SH2DesdeDataCenter Then
+        SH2 = TasSerial1.PointValue(11)
+        FrmAnalisis.DisplaySulfidrico = SH2
+    End If
+
+    If Not gObjConfiguracion.CO2DesdeDataCenter Then
+        CO2 = TasSerial1.PointValue(12)
+        FrmAnalisis.DisplayDioxidoCarbono = CO2
+    End If
+
+    If Not gObjConfiguracion.GasTotalDesdeDataCenter Then
+        GasTotal = TasSerial1.PointValue(14) * 1000 + TasSerial1.PointValue(13) '* EContinuoLocal
+        FrmAnalisis.DisplayGasTotal = GasTotal
+    End If
+
+    If TasSerial1.PointValue(17) = 0 _
+        Then
+            'FrmAnalisis.iLed.Active = False
+            AlarmaVacio = 0
+            iLedVacio1.Visible = False
+            iLabelVacio1.Visible = False
+            'iLabelVacio2.Visible = False
+
+        Else
+            'FrmAnalisis.iLed.Active = True
+            iLedVacio1.Visible = True
+            iLabelVacio1.Visible = True
+            'iLabelVacio2.Visible = True
+
+            Call sndPlaySound(App.Path & "\Sonidos\" & "vacio.wav", SND_ASYNC)
+            Call sndPlaySound(ByVal "", 0)
+
+            AlarmaVacio = 1000
+        End If
+
+
+    TimerSalidas.Enabled = True
+
+    TasSerial2.Trigger
+
+    If Intervalo < 200 Then
+        Intervalo = Intervalo + 1
+        Else
+        Intervalo = 0
+    End If
+
+
+'''    SH2 = Intervalo
+'''    CO2 = Intervalo * 20
+'''    GasTotal = Intervalo * 100
+
+    Intervalo = Intervalo + 1
+
+    If Not EstoyCargando Then
+        If Intervalo Mod ModuloGrabacion = 0 And DateDiff("s", FechaHoraUltimaGrabacion, Now()) > 1 Then
+            Set objPozoGasTiempo = New clsPozoGasTiempo
+            objPozoGasTiempo.CO2 = CO2
+            objPozoGasTiempo.Comentario = ComentarioGas
+            objPozoGasTiempo.fecha = Now
+            objPozoGasTiempo.GasTotal = GasTotal
+            objPozoGasTiempo.IdPozo = gObjPozoActivo.IdPozo
+            objPozoGasTiempo.SH2 = SH2
+            
+            Set gObjPozoActivo.PozoGasTiempos.Datos = gDatos
+            gObjPozoActivo.PozoGasTiempos.dbAgregar objPozoGasTiempo
+            FechaHoraUltimaGrabacion = objPozoGasTiempo.fecha
+            
+        End If
+        If FrmAnalisis.ChkTiempoReal = 1 Then
+            If Intervalo > 200 Then
+                Intervalo = 0
+                If (FrmAnalisis.ChkTiempoReal = 1) And (Intervalo Mod 3 = 0) Then
+                    fecha = Month(Now()) * 30 + Day(Now()) + Hour(Now()) / 24 + Minute(Now()) / (24 * 60) + Second(Now()) / (24# * 60# * 60#)
+                    If Intervalo Mod 48 = 0 Or gRefrescarGrafico Then FrmAnalisis.ChkTiempoRealClick
+
+                    FrmAnalisis.iPlotGases.Channel(0).AddXY fecha, GasTotal
+                    FrmAnalisis.iPlotGases.Channel(1).AddXY fecha, CO2
+                    Beep
+                    FrmAnalisis.iPlotGases.XAxis(0).Min = DateAdd("n", -1 * gSpan, fecha)
+                    Do While FrmAnalisis.iPlotGases.Channel(0).DataX(0) < FrmAnalisis.iPlotGases.XAxis(0).Min
+                        FrmAnalisis.iPlotGases.Channel(0).DeletePoints 1
+                        FrmAnalisis.iPlotGases.Channel(1).DeletePoints 1
+                    Loop
+                    FrmAnalisis.iPlotGases.Visible = False
+                    FrmAnalisis.iPlotGases.Visible = True
+                    If ComentarioGas <> "" Then
+                         Index = FrmAnalisis.iPlotGases.AddAnnotation
+                         FrmAnalisis.iPlotGases.Annotation(Index).Font.Size = 12
+                         FrmAnalisis.iPlotGases.Annotation(Index).Reference = iprtChannel
+                         FrmAnalisis.iPlotGases.Annotation(Index).ChannelName = FrmAnalisis.iPlotGases.Channel(0).Name
+                         FrmAnalisis.iPlotGases.Annotation(Index).Y = 13000 'Center X Coordinate
+                         FrmAnalisis.iPlotGases.Annotation(Index).X = fecha 'Center Y Coordinate
+                         FrmAnalisis.iPlotGases.Annotation(Index).Style = ipasText 'Text Annotation
+                         FrmAnalisis.iPlotGases.Annotation(Index).FontColor = vbWhite 'White Font
+                         FrmAnalisis.iPlotGases.Annotation(Index).Text = ComentarioGas
+                         FrmAnalisis.iPlotGases.Annotation(Index).TextRotation = ira000   'Rotate up-side-down
+                        If ComentarioGas <> "" Then
+                            ComentarioGas = ""
+                        End If
+                    End If
+                End If
+            End If
+        End If
+        ActualizarVista
+    End If
+
+    EscribirGases GasTotal, CO2, SH2
+    TimerSimulador.Enabled = True
+
+End Sub
