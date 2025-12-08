@@ -1,8 +1,24 @@
-Línea 1545: no se puede cargar el control SwTha.
-Línea 1625: no se puede cargar el control iLedFast.
-Línea 1649: no se puede cargar el control iLedTha.
-Línea 1673: no se puede cargar el control iLedNormal.
-Línea 1697: no se puede cargar el control SwNormal.
-Línea 1777: no se puede cargar el control SwFast.
-Línea 2213: no se puede cargar el control iPlotGases.
-Línea 2943: no se puede cargar el control iPlotMasterLog.
+Línea 32: la clase isAnalogLibrary.iAnalogOutputX del control DisplaySulfidrico no era una clase de control cargada.
+Línea 102: la clase isAnalogLibrary.iAnalogOutputX del control DisplayDioxidoCarbono no era una clase de control cargada.
+Línea 172: la clase isAnalogLibrary.iAnalogOutputX del control DisplayGasTotal no era una clase de control cargada.
+Línea 242: la clase TabDlg.SSTab del control SSTab3 no era una clase de control cargada.
+Línea 402: la clase MSComctlLib.ListView del control LvwCronoGas no era una clase de control cargada.
+Línea 440: la clase TabDlg.SSTab del control SSTab1 no era una clase de control cargada.
+Línea 915: la clase MSComctlLib.ListView del control LvwTemporal no era una clase de control cargada.
+Línea 1014: la clase MSComctlLib.ListView del control LvwAnalisisTemporal no era una clase de control cargada.
+Línea 1044: la clase MSComctlLib.ListView del control LvwAnalisisDefinitivo no era una clase de control cargada.
+Línea 1065: la clase TabDlg.SSTab del control SSTab2 no era una clase de control cargada.
+Línea 1534: la clase MSComctlLib.ListView del control LvwDefinitivo no era una clase de control cargada.
+Línea 1644: la clase MSComctlLib.ImageList del control ImageList2 no era una clase de control cargada.
+Línea 1691: la clase isDigitalLibrary.iSwitchSliderX del control SwTha no era una clase de control cargada.
+Línea 1771: la clase isDigitalLibrary.iLedRoundX del control iLedFast no era una clase de control cargada.
+Línea 1795: la clase isDigitalLibrary.iLedRoundX del control iLedTha no era una clase de control cargada.
+Línea 1819: la clase isDigitalLibrary.iLedRoundX del control iLedNormal no era una clase de control cargada.
+Línea 1843: la clase isDigitalLibrary.iSwitchSliderX del control SwNormal no era una clase de control cargada.
+Línea 1923: la clase isDigitalLibrary.iSwitchSliderX del control SwFast no era una clase de control cargada.
+Línea 2058: la clase TabDlg.SSTab del control SSTab4 no era una clase de control cargada.
+Línea 2292: la clase ITHora.IT_Hora del control Txthora no era una clase de control cargada.
+Línea 2303: la clase MSComCtl2.DTPicker del control Txtfecha no era una clase de control cargada.
+Línea 2364: la clase iPlotLibrary.iPlotX del control iPlotGases no era una clase de control cargada.
+Línea 3094: la clase iPlotLibrary.iPlotX del control iPlotMasterLog no era una clase de control cargada.
+Línea 4497: la clase MSComctlLib.ImageList del control ImageList1 no era una clase de control cargada.

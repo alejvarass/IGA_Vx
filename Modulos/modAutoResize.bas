@@ -54,12 +54,17 @@ Public Sub InitializeControls(frmParent As Form, Container As Object)
         Dim i As Long
         Dim OriginalTab As Long
         OriginalTab = sstab_ctrl_local.Tab
+        Dim z As Long
+        
+        
         
         ' 1. ITERAR TODAS LAS PESTA?AS (CR?TICO PARA EXPOSICI?N DE CONTROLES)
         For i = 0 To sstab_ctrl_local.Tabs - 1
             sstab_ctrl_local.Tab = i
             DoEvents ' VITAL: Fuerza a VB a mover los controles a la posici?n (Left >= 0)
             
+            Debug.Print " Left Original de " & sstab_ctrl_local.Name & " en el tab "; sstab_ctrl_local.Tab; " es " & sstab_ctrl_local.Left
+                      
             ' 2. ITERAR LOS CONTROLES DEL FORMULARIO PADRE Y FILTRAR POR CONTENEDOR
             For Each ctrl In frmParent.Controls
                 If ctrl.Container Is sstab_ctrl_local Then
@@ -121,7 +126,10 @@ Public Sub InitializeControls(frmParent As Form, Container As Object)
             If TypeOf ctrl Is Frame Or TypeOf ctrl Is SSTab Or TypeOf ctrl Is PictureBox Then
                 InitializeControls frmParent, ctrl
             End If
-        Next ctrl
+        
+       Debug.Print " Left Original de " & ctrl.Name & " es " & ctrl.Left
+        
+       Next ctrl
     End If
     
     On Error GoTo 0
@@ -209,6 +217,11 @@ Public Sub ResizeControls(frmParent As Form, Container As Object, ScaleX As Sing
                         End If
                     End If
                 End If
+            
+            
+ '           Debug.Print " Left Reescalado de " & sstab_ctrl_local.Name & " en el tab "; sstab_ctrl_local.Tab; " es " & sstab_ctrl_local.Left
+               
+                      
             Next ctrl
             
         Next i
@@ -233,7 +246,13 @@ Public Sub ResizeControls(frmParent As Form, Container As Object, ScaleX As Sing
             Set clsOriginal = g_ResizeCollection(sKey)
             
             If Not clsOriginal Is Nothing Then
-                ctrl.Left = clsOriginal.LeftOriginal * ScaleX
+                If clsOriginal.LeftOriginal < -50000 Then
+                    ctrl.Left = ((clsOriginal.LeftOriginal + 75000) * ScaleX) - 75000
+                Else
+                    ctrl.Left = clsOriginal.LeftOriginal * ScaleX
+                End If
+                
+ '               ctrl.Left = clsOriginal.LeftOriginal * ScaleX
                 ctrl.Top = clsOriginal.TopOriginal * ScaleY
                 ctrl.Width = clsOriginal.WidthOriginal * ScaleX
                 ctrl.Height = clsOriginal.HeightOriginal * ScaleY
@@ -248,6 +267,7 @@ Public Sub ResizeControls(frmParent As Form, Container As Object, ScaleX As Sing
             If TypeOf ctrl Is Frame Or TypeOf ctrl Is SSTab Or TypeOf ctrl Is PictureBox Then
                 ResizeControls frmParent, ctrl, ScaleX, ScaleY
             End If
+        Debug.Print " Left Reescalado de " & ctrl.Name & " es " & ctrl.Left
         Next ctrl
     End If
     

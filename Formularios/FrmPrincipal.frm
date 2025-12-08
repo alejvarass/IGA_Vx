@@ -17,12 +17,6 @@ Begin VB.MDIForm MdiPrincipal
    LinkTopic       =   "MDIForm1"
    ScrollBars      =   0   'False
    WindowState     =   2  'Maximized
-   Begin SocketWrenchCtl.SocketWrench Sw 
-      Left            =   630
-      Top             =   720
-      _cx             =   741
-      _cy             =   741
-   End
    Begin iProfessionalLibrary.iTimersX TimerCroma 
       Left            =   4725
       Top             =   3375
@@ -44,6 +38,12 @@ Begin VB.MDIForm MdiPrincipal
       Interval7       =   1000
       Interval8       =   1000
       Interval9       =   1000
+   End
+   Begin SocketWrenchCtl.SocketWrench Sw 
+      Left            =   630
+      Top             =   720
+      _cx             =   741
+      _cy             =   741
    End
    Begin InetCtlsObjects.Inet InetDisparoCroma 
       Left            =   60
@@ -700,6 +700,10 @@ Public Sub JustTimerCroma()
 End Sub
 
 
+
+Private Sub iLabelX2_OnClick()
+
+End Sub
 
 Private Sub MDIForm_Load()
     
@@ -1828,8 +1832,8 @@ Public Sub AgregarProfundidadRetorno()
     FrmAnalisis.iPlotGases.Annotation(Index).ChannelName = FrmAnalisis.iPlotGases.Channel(0).Name
 
 
-    FrmAnalisis.iPlotGases.Annotation(Index).Y = 13000 'Center X Coordinate
-    FrmAnalisis.iPlotGases.Annotation(Index).X = Time + Date 'Center Y Coordinate
+    FrmAnalisis.iPlotGases.Annotation(Index).y = 13000 'Center X Coordinate
+    FrmAnalisis.iPlotGases.Annotation(Index).x = Time + Date 'Center Y Coordinate
     FrmAnalisis.iPlotGases.Annotation(Index).Style = ipasText 'Text Annotation
     FrmAnalisis.iPlotGases.Annotation(Index).FontColor = vbWhite 'White Font
     FrmAnalisis.iPlotGases.Annotation(Index).Text = ProfundidadRetorno

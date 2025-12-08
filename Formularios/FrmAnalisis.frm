@@ -12,7 +12,7 @@ Begin VB.Form FrmAnalisis
    ClientHeight    =   9810
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   11400
+   ClientWidth     =   13380
    ControlBox      =   0   'False
    BeginProperty Font 
       Name            =   "Arial"
@@ -27,7 +27,7 @@ Begin VB.Form FrmAnalisis
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    ScaleHeight     =   9810
-   ScaleWidth      =   11400
+   ScaleWidth      =   13380
    WindowState     =   2  'Maximized
    Begin isAnalogLibrary.iAnalogOutputX DisplaySulfidrico 
       Height          =   675
@@ -273,8 +273,8 @@ Begin VB.Form FrmAnalisis
       TabCaption(1)   =   "Cronometraje - Gas Total - CO2"
       TabPicture(1)   =   "FrmAnalisis.frx":0786
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame14"
-      Tab(1).Control(1)=   "LvwCronoGas"
+      Tab(1).Control(0)=   "LvwCronoGas"
+      Tab(1).Control(1)=   "Frame14"
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame14 
          BackColor       =   &H00E8E8E8&
@@ -481,15 +481,15 @@ Begin VB.Form FrmAnalisis
             TabCaption(1)   =   "Rel Principales"
             TabPicture(1)   =   "FrmAnalisis.frx":0FD1
             Tab(1).ControlEnabled=   0   'False
-            Tab(1).Control(0)=   "Frame9"
-            Tab(1).Control(1)=   "Frame11"
+            Tab(1).Control(0)=   "Frame11"
+            Tab(1).Control(1)=   "Frame9"
             Tab(1).ControlCount=   2
             TabCaption(2)   =   "Rel Secundarias"
             TabPicture(2)   =   "FrmAnalisis.frx":0FED
             Tab(2).ControlEnabled=   0   'False
-            Tab(2).Control(0)=   "Frame10"
+            Tab(2).Control(0)=   "Frame7"
             Tab(2).Control(1)=   "Frame8"
-            Tab(2).Control(2)=   "Frame7"
+            Tab(2).Control(2)=   "Frame10"
             Tab(2).ControlCount=   3
             Begin VB.Frame fraCmdGuardarTemporal 
                Height          =   375
@@ -1053,6 +1053,7 @@ Begin VB.Form FrmAnalisis
             LabelEdit       =   1
             LabelWrap       =   -1  'True
             HideSelection   =   0   'False
+            AllowReorder    =   -1  'True
             FullRowSelect   =   -1  'True
             _Version        =   393217
             SmallIcons      =   "ImageList1"
@@ -1072,53 +1073,44 @@ Begin VB.Form FrmAnalisis
             _ExtentY        =   5662
             _Version        =   393216
             Style           =   1
+            Tab             =   1
             TabHeight       =   520
             TabCaption(0)   =   "Elementos"
             TabPicture(0)   =   "FrmAnalisis.frx":1247
-            Tab(0).ControlEnabled=   -1  'True
+            Tab(0).ControlEnabled=   0   'False
             Tab(0).Control(0)=   "ArchivoDefinitivo"
-            Tab(0).Control(0).Enabled=   0   'False
             Tab(0).Control(1)=   "Label23"
-            Tab(0).Control(1).Enabled=   0   'False
             Tab(0).Control(2)=   "Label22"
-            Tab(0).Control(2).Enabled=   0   'False
             Tab(0).Control(3)=   "Label21"
-            Tab(0).Control(3).Enabled=   0   'False
             Tab(0).Control(4)=   "Label19"
-            Tab(0).Control(4).Enabled=   0   'False
             Tab(0).Control(5)=   "Label18"
-            Tab(0).Control(5).Enabled=   0   'False
             Tab(0).Control(6)=   "LvwDefinitivo"
-            Tab(0).Control(6).Enabled=   0   'False
             Tab(0).Control(7)=   "TxtProfundidadDefinitivo"
-            Tab(0).Control(7).Enabled=   0   'False
             Tab(0).Control(8)=   "TxtCO2Definitivo"
-            Tab(0).Control(8).Enabled=   0   'False
             Tab(0).Control(9)=   "TxtSH2Definitivo"
-            Tab(0).Control(9).Enabled=   0   'False
             Tab(0).Control(10)=   "TxtGasTotalDefinitivo"
-            Tab(0).Control(10).Enabled=   0   'False
             Tab(0).Control(11)=   "TxtGasTotalCromatograficoDefinitivo"
-            Tab(0).Control(11).Enabled=   0   'False
             Tab(0).ControlCount=   12
             TabCaption(1)   =   "Rel Principales"
             TabPicture(1)   =   "FrmAnalisis.frx":1263
-            Tab(1).ControlEnabled=   0   'False
-            Tab(1).Control(0)=   "Frame5"
-            Tab(1).Control(1)=   "Frame12"
+            Tab(1).ControlEnabled=   -1  'True
+            Tab(1).Control(0)=   "Frame12"
+            Tab(1).Control(0).Enabled=   0   'False
+            Tab(1).Control(1)=   "Frame5"
+            Tab(1).Control(1).Enabled=   0   'False
             Tab(1).ControlCount=   2
             TabCaption(2)   =   "Rel Secundarias"
             TabPicture(2)   =   "FrmAnalisis.frx":127F
             Tab(2).ControlEnabled=   0   'False
-            Tab(2).Control(0)=   "Frame6"
+            Tab(2).Control(0)=   "Frame3"
             Tab(2).Control(1)=   "Frame4"
-            Tab(2).Control(2)=   "Frame3"
+            Tab(2).Control(2)=   "Frame6"
             Tab(2).ControlCount=   3
             Begin VB.TextBox TxtGasTotalCromatograficoDefinitivo 
                Alignment       =   2  'Center
                Enabled         =   0   'False
                Height          =   315
-               Left            =   1770
+               Left            =   -73230
                TabIndex        =   80
                Top             =   2580
                Width           =   735
@@ -1127,7 +1119,7 @@ Begin VB.Form FrmAnalisis
                Alignment       =   1  'Right Justify
                Enabled         =   0   'False
                Height          =   315
-               Left            =   1770
+               Left            =   -73230
                TabIndex        =   79
                Top             =   2190
                Width           =   735
@@ -1136,7 +1128,7 @@ Begin VB.Form FrmAnalisis
                Alignment       =   1  'Right Justify
                Enabled         =   0   'False
                Height          =   315
-               Left            =   3660
+               Left            =   -71340
                TabIndex        =   78
                Top             =   2580
                Width           =   465
@@ -1145,7 +1137,7 @@ Begin VB.Form FrmAnalisis
                Alignment       =   1  'Right Justify
                Enabled         =   0   'False
                Height          =   315
-               Left            =   3360
+               Left            =   -71640
                TabIndex        =   77
                Top             =   2190
                Width           =   765
@@ -1154,7 +1146,7 @@ Begin VB.Form FrmAnalisis
                Alignment       =   1  'Right Justify
                Enabled         =   0   'False
                Height          =   315
-               Left            =   420
+               Left            =   -74580
                TabIndex        =   76
                Top             =   2190
                Width           =   615
@@ -1162,7 +1154,7 @@ Begin VB.Form FrmAnalisis
             Begin VB.Frame Frame5 
                Caption         =   "Wtness/Balance/Character"
                Height          =   1035
-               Left            =   -74955
+               Left            =   45
                TabIndex        =   69
                Top             =   465
                Width           =   4050
@@ -1445,9 +1437,9 @@ Begin VB.Form FrmAnalisis
             Begin VB.Frame Frame12 
                Caption         =   "Porcentajes"
                Height          =   1590
-               Left            =   -74955
+               Left            =   120
                TabIndex        =   33
-               Top             =   1530
+               Top             =   1560
                Width           =   4080
                Begin VB.TextBox TxtC5Definitivo 
                   Alignment       =   1  'Right Justify
@@ -1542,7 +1534,7 @@ Begin VB.Form FrmAnalisis
             End
             Begin MSComctlLib.ListView LvwDefinitivo 
                Height          =   1830
-               Left            =   45
+               Left            =   -74955
                TabIndex        =   81
                Top             =   330
                Width           =   4125
@@ -1564,7 +1556,7 @@ Begin VB.Form FrmAnalisis
                AutoSize        =   -1  'True
                Caption         =   "Gas Total Crom"
                Height          =   210
-               Left            =   555
+               Left            =   -74445
                TabIndex        =   87
                Top             =   2655
                Width           =   1110
@@ -1573,7 +1565,7 @@ Begin VB.Form FrmAnalisis
                AutoSize        =   -1  'True
                Caption         =   "THA"
                Height          =   210
-               Left            =   1335
+               Left            =   -73665
                TabIndex        =   86
                Top             =   2265
                Width           =   315
@@ -1582,7 +1574,7 @@ Begin VB.Form FrmAnalisis
                AutoSize        =   -1  'True
                Caption         =   "SH2"
                Height          =   210
-               Left            =   3000
+               Left            =   -72000
                TabIndex        =   85
                Top             =   2625
                Width           =   300
@@ -1591,7 +1583,7 @@ Begin VB.Form FrmAnalisis
                AutoSize        =   -1  'True
                Caption         =   "CO2"
                Height          =   210
-               Left            =   2985
+               Left            =   -72015
                TabIndex        =   84
                Top             =   2265
                Width           =   315
@@ -1600,7 +1592,7 @@ Begin VB.Form FrmAnalisis
                AutoSize        =   -1  'True
                Caption         =   "Prof"
                Height          =   210
-               Left            =   75
+               Left            =   -74925
                TabIndex        =   83
                Top             =   2265
                Width           =   300
@@ -1616,7 +1608,7 @@ Begin VB.Form FrmAnalisis
                   Strikethrough   =   0   'False
                EndProperty
                Height          =   195
-               Left            =   90
+               Left            =   -74910
                TabIndex        =   82
                Top             =   2910
                Width           =   3795
@@ -2122,14 +2114,14 @@ Begin VB.Form FrmAnalisis
       TabCaption(1)   =   "Profundidad"
       TabPicture(1)   =   "FrmAnalisis.frx":762A
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "fraDownArrowProf"
-      Tab(1).Control(1)=   "fraUpArrowProf"
-      Tab(1).Control(2)=   "fraCmdActualizar"
-      Tab(1).Control(3)=   "TxtProfundidadInicio"
-      Tab(1).Control(4)=   "TxtSpan"
-      Tab(1).Control(5)=   "iPlotMasterLog"
-      Tab(1).Control(6)=   "Label16"
-      Tab(1).Control(7)=   "Label15"
+      Tab(1).Control(0)=   "Label15"
+      Tab(1).Control(1)=   "Label16"
+      Tab(1).Control(2)=   "iPlotMasterLog"
+      Tab(1).Control(3)=   "TxtSpan"
+      Tab(1).Control(4)=   "TxtProfundidadInicio"
+      Tab(1).Control(5)=   "fraCmdActualizar"
+      Tab(1).Control(6)=   "fraUpArrowProf"
+      Tab(1).Control(7)=   "fraDownArrowProf"
       Tab(1).ControlCount=   8
       Begin VB.Frame fraDownArrowProf 
          BackColor       =   &H00000000&
@@ -2327,7 +2319,7 @@ Begin VB.Form FrmAnalisis
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   81264641
+         Format          =   67239937
          CurrentDate     =   39197
       End
       Begin VB.CommandButton CmdGuardarComentario 
@@ -4862,8 +4854,8 @@ Private Sub CmdConsultar_Click()
                      iPlotGases.Annotation(Index).Font.Size = 12
                      iPlotGases.Annotation(Index).Reference = iprtChannel
                      iPlotGases.Annotation(Index).ChannelName = iPlotGases.Channel(0).Name
-                     iPlotGases.Annotation(Index).Y = 13000 'Center X Coordinate
-                     iPlotGases.Annotation(Index).X = fecha 'Center Y Coordinate
+                     iPlotGases.Annotation(Index).y = 13000 'Center X Coordinate
+                     iPlotGases.Annotation(Index).x = fecha 'Center Y Coordinate
                      iPlotGases.Annotation(Index).Style = ipasText 'Text Annotation
                      iPlotGases.Annotation(Index).FontColor = vbWhite 'White Font
                      iPlotGases.Annotation(Index).Text = objPozoGasTiempo.Comentario
@@ -5198,8 +5190,8 @@ Public Sub LimpiarYConsultarDatosTiempo()
                      iPlotGases.Annotation(Index).Font.Size = 12
                      iPlotGases.Annotation(Index).Reference = iprtChannel
                      iPlotGases.Annotation(Index).ChannelName = iPlotGases.Channel(0).Name
-                     iPlotGases.Annotation(Index).Y = 13000 'Center X Coordinate
-                     iPlotGases.Annotation(Index).X = fecha 'Center Y Coordinate
+                     iPlotGases.Annotation(Index).y = 13000 'Center X Coordinate
+                     iPlotGases.Annotation(Index).x = fecha 'Center Y Coordinate
                      iPlotGases.Annotation(Index).Style = ipasText 'Text Annotation
                      iPlotGases.Annotation(Index).FontColor = vbWhite 'White Font
                      iPlotGases.Annotation(Index).Text = objPozoGasTiempo.Comentario
@@ -5447,7 +5439,7 @@ Private Sub Form_Load()
  
     Dim Indice As Long
 
-    On Error GoTo Error
+   On Error GoTo Error
     
     ' 1. Inicializar el redimensionamiento de componentes (esto SIEMPRE va primero)
     Call InitializeFormResize(Me)
@@ -5485,7 +5477,10 @@ If Err.Number <> 0 Then
 End Sub
 
 Private Sub SetearList()
+  Dim columnWidth As Integer
+  
     
+    columnWidth = LvwAnalisisDefinitivo.Width \ 4
     With LvwAnalisisDefinitivo.ColumnHeaders
         .Clear
         
@@ -5495,7 +5490,11 @@ Private Sub SetearList()
         .Add , "Prof.", "Prof.", 550
         
     End With
-    
+        
+   
+' aca para ordenat las columnas de los listview
+
+    Next
     LvwAnalisisDefinitivo.Sorted = True
     
     With LvwAnalisisTemporal.ColumnHeaders
@@ -5641,16 +5640,16 @@ Error:
     
 End Sub
 
-Private Sub iPlotGases_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Long, ByVal Y As Long)
+Private Sub iPlotGases_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal x As Long, ByVal y As Long)
 
-    If Button = vbRightButton And X > 120 Then
+    If Button = vbRightButton And x > 120 Then
         PopupMenu MdiPrincipal.mnuGrafico
     End If
     
 End Sub
 
 
-Private Sub iPlotMasterLog_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Long, ByVal Y As Long)
+Private Sub iPlotMasterLog_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal x As Long, ByVal y As Long)
 Dim FinEjeYCrono As Long
     
     FinEjeYCrono = iPlotMasterLog.OuterMarginLeft + _
@@ -5664,7 +5663,7 @@ Dim FinEjeYCrono As Long
     
     
     If Button = vbRightButton Then
-        If X > FinEjeYCrono Then
+        If x > FinEjeYCrono Then
             PopupMenu MdiPrincipal.mnuEscalasLog
         Else
             frmSpanCrono.Show
@@ -5719,7 +5718,7 @@ Private Sub LvwAnalisisDefinitivo_ItemClick(ByVal Item As MSComctlLib.ListItem)
     
 End Sub
 
-Private Sub LvwAnalisisDefinitivo_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub LvwAnalisisDefinitivo_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
     
     BotonDerecho = Button = vbRightButton
     
@@ -5841,7 +5840,7 @@ Private Sub LvwAnalisisTemporal_ItemClick(ByVal Item As MSComctlLib.ListItem)
     
 End Sub
 
-Private Sub LvwAnalisisTemporal_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub LvwAnalisisTemporal_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
     
     BotonDerecho = Button = vbRightButton
     
@@ -6004,7 +6003,7 @@ Private Sub LvwTemporal_KeyPress(KeyAscii As Integer)
     
 End Sub
 
-Private Sub LvwTemporal_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub LvwTemporal_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
     
     BotonDerecho = Button = vbRightButton
     
@@ -6812,8 +6811,8 @@ Private Sub pObjAdminEventos_EvtActualizarVistaTiempo(ByVal Intervalo As Long)
                      iPlotGases.Annotation(Index).Font.Size = 12
                      iPlotGases.Annotation(Index).Reference = iprtChannel
                      iPlotGases.Annotation(Index).ChannelName = iPlotGases.Channel(0).Name
-                     iPlotGases.Annotation(Index).Y = 13000 'Center X Coordinate
-                     iPlotGases.Annotation(Index).X = fecha 'Center Y Coordinate
+                     iPlotGases.Annotation(Index).y = 13000 'Center X Coordinate
+                     iPlotGases.Annotation(Index).x = fecha 'Center Y Coordinate
                      iPlotGases.Annotation(Index).Style = ipasText 'Text Annotation
                      iPlotGases.Annotation(Index).FontColor = vbWhite 'White Font
                      iPlotGases.Annotation(Index).Text = ComentarioGas
@@ -6828,7 +6827,7 @@ Private Sub pObjAdminEventos_EvtActualizarVistaTiempo(ByVal Intervalo As Long)
 
 End Sub
 
-Private Sub SwTha_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Long, ByVal Y As Long)
+Private Sub SwTha_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal x As Long, ByVal y As Long)
 
         Select Case SwTha.Position
             Case 0: EContinuoLocal = 1
@@ -6854,28 +6853,28 @@ Private Sub SwTha_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByV
         
 End Sub
 
-Private Sub SwTha_OnMouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Long, ByVal Y As Long)
+Private Sub SwTha_OnMouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal x As Long, ByVal y As Long)
 
     SwTha.Tag = SwTha.Position
 
 End Sub
 
 
-Private Sub SwNormal_OnMouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Long, ByVal Y As Long)
+Private Sub SwNormal_OnMouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal x As Long, ByVal y As Long)
 
     SwNormal.Tag = SwNormal.Position
 
 End Sub
 
 
-Private Sub SwFast_OnMouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Long, ByVal Y As Long)
+Private Sub SwFast_OnMouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal x As Long, ByVal y As Long)
 
     SwFast.Tag = SwFast.Position
 
 End Sub
 
 
-Private Sub SwNormal_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Long, ByVal Y As Long)
+Private Sub SwNormal_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal x As Long, ByVal y As Long)
     
     
         Select Case SwNormal.Position
@@ -6911,7 +6910,7 @@ Private Sub SwNormal_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, 
 
 End Sub
 
-Private Sub SwFast_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Long, ByVal Y As Long)
+Private Sub SwFast_OnMouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal x As Long, ByVal y As Long)
 
 
     
